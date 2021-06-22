@@ -19,6 +19,7 @@ RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y less nano wget psmisc zip build-essential git mercurial
 # mesa packages for non-nvidia users
 RUN apt-get install -y libgl1-mesa-glx libgl1-mesa-dri
+RUN apt-get install -y libnvidia-gl-440
 
 # install joystick package
 RUN apt-get install -y jstest-gtk

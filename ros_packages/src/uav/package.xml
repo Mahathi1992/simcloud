@@ -46,6 +46,15 @@
   <!-- Packages of PX4 Firmware-->
   <run_depend>px4</run_depend>
   <run_depend>mavlink_sitl_gazebo</run_depend>
+  <!-- added by MB -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>laser_geometry</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>laser_geometry</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>sensor_msgs</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

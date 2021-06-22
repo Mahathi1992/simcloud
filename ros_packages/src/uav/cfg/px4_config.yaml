@@ -212,20 +212,25 @@ mocap:
   use_pose: true  # ~mocap/pose
 
 # odom
-odometry:
-  in:
-    frame_id: "odom"
-    child_frame_id: "base_link"
-    frame_tf:
-      local_frame: "local_origin_ned"
-      body_frame_orientation: "flu"
-  out:
-    frame_tf:
-      # available: check MAV_FRAME odometry local frames in
-      # https://mavlink.io/en/messages/common.html
-      local_frame: "vision_ned"
-      # available: ned, frd or flu (though only the tf to frd is supported)
-      body_frame_orientation: "frd"
+#odometry:
+#  tf:
+#    send: true
+#    frame_id: "map"
+#    child_frame_id: "base_link"
+#  mav_frame: MAV_FRAME_BODY_NED
+#  in:
+#    frame_id: "odom"
+#    child_frame_id: "base_link"
+#    frame_tf:
+#      local_frame: "local_origin_ned"
+#      body_frame_orientation: "flu"
+#  out:
+#    frame_tf:
+#      # available: check MAV_FRAME odometry local frames in
+#      # https://mavlink.io/en/messages/common.html
+#      local_frame: "vision_ned"
+#      # available: ned, frd or flu (though only the tf to frd is supported)
+#      body_frame_orientation: "frd"
 
 # px4flow
 px4flow:
