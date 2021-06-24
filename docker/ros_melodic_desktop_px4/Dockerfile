@@ -19,6 +19,7 @@ RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y less nano wget psmisc zip build-essential git mercurial
 # mesa packages for non-nvidia users
 RUN apt-get install -y libgl1-mesa-glx libgl1-mesa-dri
+# added by MB (UBW) for system with nvidia
 RUN apt-get install -y libnvidia-gl-440
 
 # install joystick package
@@ -39,6 +40,7 @@ RUN echo ". /usr/share/gazebo/setup.sh" >> ~/.bashrc
 ### General ROS packages
 RUN apt-get update && apt-get install -y ros-melodic-teleop-twist-keyboard ros-melodic-teleop-twist-joy ros-melodic-map-server ros-melodic-amcl ros-melodic-gmapping
 RUN apt-get install -y ros-melodic-move-base ros-melodic-global-planner ros-melodic-teb-local-planner
+RUN apt-get install -y liburdfdom-tools
 
 ### PX4 installation
 #### Initial setup:
