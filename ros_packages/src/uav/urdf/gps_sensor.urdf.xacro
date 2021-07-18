@@ -3,7 +3,9 @@
 
 <xacro:macro name="gps_sensor" params="name parent *origin">
 
+  <!--
   <link name="gps_link"/>
+  -->
   <joint name="${name}_joint" type="fixed">
     <xacro:insert_block name="origin" />
     <parent link="${parent}"/>
@@ -46,5 +48,5 @@
       </plugin>
     </sensor>
   </gazebo>
-
+</xacro:macro>
 </robot>

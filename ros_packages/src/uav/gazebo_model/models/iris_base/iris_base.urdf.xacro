@@ -1,8 +1,11 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="iris_base">
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="iris_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <xacro:include filename="$(find uav)/gazebo_model/models/iris_base/common_properties.xacro"/>
   <!-- Main quadrotor link -->
+  <!--
   <xacro:macro name="iris_base_macro">
+  -->
     <link name="base_link">
       <inertial>
         <mass value="1.5" />
@@ -77,7 +80,7 @@
     </link>
     <joint name="rotor_0_joint" type="revolute">
       <parent link="base_link"/>
-      <child link="rotor_0_joint"/>
+      <child link="rotor_0"/>
       <limit effort="1e+16" velocity="1e+16" />
     </joint>
 
@@ -108,7 +111,7 @@
     </link>
     <joint name="rotor_1_joint" type="revolute">
       <parent link="base_link"/>
-      <child link="rotor_1_joint"/>
+      <child link="rotor_1"/>
       <limit effort="1e+16" velocity="1e+16" />
     </joint>
 
@@ -139,7 +142,7 @@
     </link>
     <joint name="rotor_2_joint" type="revolute">
       <parent link="base_link"/>
-      <child link="rotor_2_joint"/>
+      <child link="rotor_2"/>
       <limit effort="1e+16" velocity="1e+16" />
     </joint>
 
@@ -170,7 +173,7 @@
     </link>
     <joint name="rotor_3_joint" type="revolute">
       <parent link="base_link"/>
-      <child link="rotor_3_joint"/>
+      <child link="rotor_3"/>
       <limit effort="1e+16" velocity="1e+16" />
     </joint>
 
@@ -281,7 +284,7 @@
         <biasCorrelationTime>600</biasCorrelationTime>
         <magTopic>/mag</magTopic>
       </plugin>
-      
+
       <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
         <robotNamespace/>
         <pubRate>50</pubRate>
@@ -410,5 +413,5 @@
 
     </gazebo>
 
-  </xacro:macro>
+  <!-- </xacro:macro> -->
 </robot>
