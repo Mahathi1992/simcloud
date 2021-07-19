@@ -18,6 +18,7 @@
         <geometry>
           <mesh filename="package://uav/meshes/iris_base/iris.stl" scale="1 1 1"/>
         </geometry>
+        <material name="grey"/>
       </visual>
 
       <collision>
@@ -66,9 +67,7 @@
         <geometry>
           <mesh filename="package://uav/meshes/iris_base/iris_prop_ccw.dae" scale="1 1 1"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0 0 .8 1"/>
-        </material>
+        <material name="blue"/>
       </visual>
 
       <collision>
@@ -97,9 +96,7 @@
         <geometry>
           <mesh filename="package://uav/meshes/iris_base/iris_prop_ccw.dae" scale="1 1 1"/>
         </geometry>
-        <material name="black">
-          <color rgba="0 0 0 1"/>
-        </material>
+        <material name="black"/>
       </visual>
 
       <collision>
@@ -128,9 +125,7 @@
         <geometry>
           <mesh filename="package://uav/meshes/iris_base/iris_prop_cw.dae" scale="1 1 1"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0 0 .8 1"/>
-        </material>
+        <material name="blue"/>
       </visual>
 
       <collision>
@@ -159,9 +154,7 @@
         <geometry>
           <mesh filename="package://uav/meshes/iris_base/iris_prop_cw.dae" scale="1 1 1"/>
         </geometry>
-        <material name="black">
-          <color rgba="0 0 0 1"/>
-        </material>
+        <material name="black"/>
       </visual>
 
       <collision>
