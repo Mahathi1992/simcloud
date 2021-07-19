@@ -1,0 +1,26 @@
+digraph G {
+"map" -> "map_ned"[label="Broadcaster: /mavros\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 354.888 sec old)\nBuffer length: 0.000 sec\n"];
+"odom" -> "odom_ned"[label="Broadcaster: /mavros\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 354.888 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "base_link_frd"[label="Broadcaster: /mavros\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 354.888 sec old)\nBuffer length: 0.000 sec\n"];
+"map" -> "base_link"[label="Broadcaster: /mavros\nAverage rate: 30.204 Hz\nMost recent transform: 354.850 ( 0.038 sec old)\nBuffer length: 4.900 sec\n"];
+"fcu_frd" -> "fcu"[label="Broadcaster: /iris_rplidar_static_tf_broadcaster_fcu\nAverage rate: 10.200 Hz\nMost recent transform: 354.976 ( -0.088 sec old)\nBuffer length: 4.902 sec\n"];
+"base_link" -> "rotor_2"[label="Broadcaster: /iris_rotor2_static_tf_broadcaster\nAverage rate: 10.200 Hz\nMost recent transform: 354.984 ( -0.096 sec old)\nBuffer length: 4.902 sec\n"];
+"base_link" -> "rotor_1"[label="Broadcaster: /iris_rotor1_static_tf_broadcaster\nAverage rate: 10.204 Hz\nMost recent transform: 354.890 ( -0.002 sec old)\nBuffer length: 4.802 sec\n"];
+"base_link" -> "rotor_3"[label="Broadcaster: /iris_rotor3_static_tf_broadcaster\nAverage rate: 10.202 Hz\nMost recent transform: 354.903 ( -0.015 sec old)\nBuffer length: 4.803 sec\n"];
+"base_link" -> "rotor_0"[label="Broadcaster: /iris_rotor0_static_tf_broadcaster\nAverage rate: 10.196 Hz\nMost recent transform: 354.909 ( -0.021 sec old)\nBuffer length: 4.806 sec\n"];
+"base_link" -> "gps_link"[label="Broadcaster: /iris_gps_static_tf_broadcaster\nAverage rate: 10.204 Hz\nMost recent transform: 354.910 ( -0.022 sec old)\nBuffer length: 4.802 sec\n"];
+"base_link" -> "rplidar_link"[label="Broadcaster: /iris_rplidar_static_tf_broadcaster\nAverage rate: 10.196 Hz\nMost recent transform: 354.929 ( -0.041 sec old)\nBuffer length: 4.806 sec\n"];
+"base_link" -> "imu_link"[label="Broadcaster: /iris_imu_static_tf_broadcaster\nAverage rate: 10.200 Hz\nMost recent transform: 354.928 ( -0.040 sec old)\nBuffer length: 4.804 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 354.888"[ shape=plaintext ] ;
+ }->"map";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 354.888"[ shape=plaintext ] ;
+ }->"odom";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 354.888"[ shape=plaintext ] ;
+ }->"fcu_frd";
+}

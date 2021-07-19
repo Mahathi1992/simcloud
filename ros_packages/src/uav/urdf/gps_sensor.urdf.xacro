@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="gps_sensor" params="name parent *origin">
+
+  <!--
+  <link name="gps_link"/>
+  -->
+  <joint name="${name}_joint" type="fixed">
+    <xacro:insert_block name="origin" />
+    <parent link="${parent}"/>
+    <child link="${name}_link"/>
+  </joint>
+
+  <link name="${name}_link">
+    <inertial>
+      <mass value="0.01" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="2.1733e-06" ixy="0" ixz="0" iyy="2.1733e-06" iyz="0" izz="1.8e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.002" radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.002" radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+   <!-- Gazebo sensor plugin -->
+  <gazebo reference="${name}_link">
+    <sensor type="gps" name="${name}">
+      <pose>0 0 0 0 0 0</pose>
+      <plugin name='gps_plugin' filename='libgazebo_gps_plugin.so'>
+        <robotNamespace/>
+        <gpsNoise>1</gpsNoise>
+        <gpsXYRandomWalk>2.0</gpsXYRandomWalk>
+        <gpsZRandomWalk>4.0</gpsZRandomWalk>
+        <gpsXYNoiseDensity>0.0002</gpsXYNoiseDensity>
+        <gpsZNoiseDensity>0.0004</gpsZNoiseDensity>
+        <gpsVXYNoiseDensity>0.2</gpsVXYNoiseDensity>
+        <gpsVZNoiseDensity>0.4</gpsVZNoiseDensity>
+      </plugin>
+    </sensor>
+  </gazebo>
+</xacro:macro>
+</robot>

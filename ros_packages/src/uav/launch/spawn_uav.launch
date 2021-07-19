@@ -17,11 +17,16 @@
     <arg name="pitch" default="0"/>
     <arg name="yaw" default="0"/>
 
-    <arg name="uav_model" default="iris_camera"/> <!--uses iris model from px4 firmware package and adds a ros usb_cam--> <!-- iris,iris_camera, iris_opt_flow, iris_rplidar, solo, typhoon_h480 -->
-    <param name="robot_description" textfile="$(find uav)/gazebo_model/models/iris_camera/iris_camera_base.xacro" />
+    <arg name="uav_model" default="iris_base"/> <!--uses iris model from px4 firmware package and adds a ros usb_cam--> <!-- iris,iris_camera, iris_opt_flow, iris_rplidar, solo, typhoon_h480 -->
+    <!-- -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find uav)/urdf/iris_base.urdf.xacro" />
+
+    <!-- -->
     <node name="spawn_uav" pkg="gazebo_ros" type="spawn_model" args="-file $(find px4)/Tools/sitl_gazebo/models/$(arg uav_model)/$(arg uav_model).sdf -sdf -model $(arg uav_model) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
 
-
+    <!-- ADD  UAV
+    <node name="spawn_uav" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model $(arg uav_model) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
+    -->
     <!-- launch static broadcasters for the UAV model -->
     <include file="$(find uav)/launch/model_tf.launch">
         <arg name="sensor_model" value="$(arg uav_model)" />
